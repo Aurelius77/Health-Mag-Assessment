@@ -1,7 +1,8 @@
 A health companion app.
+
 #STACK = Created with NextJs, Typescrpt, TailwindCSS, NodeJS and Supabase
 
-#WORKFLOW
+##WORKFLOW
 The app takes data from the provided health content and pdigin translations document and seeded them into a supabase db(seed.ts, seed.sql), from which it is then imported and used in the application
 
 And then there's now an admin page which can be accessed by a generated token to use and update the current database and it's content wuthout need of technical know-how or rewriting the codebase.
