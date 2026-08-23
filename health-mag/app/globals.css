@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* Health Information Companion — calm, trustworthy health palette.
+   Light and dark are both defined with the same token names so every
+   component just uses bg-surface / text-foreground / bg-brand etc. */
+:root {
+  --background: #f6f8f9;
+  --surface: #ffffff;
+  --surface-2: #f1f5f6;
+  --foreground: #0f2b2e;
+  --muted: #5b7377;
+  --border: #dde6e7;
+  --brand: #0d9488;        /* teal-600 */
+  --brand-strong: #0f766e; /* teal-700 */
+  --brand-contrast: #ffffff;
+  --accent: #ecfdf9;       /* soft teal wash */
+  --accent-border: #99e6da;
+  --warning: #b45309;      /* amber-700, for the fallback / disclaimer notes */
+  --warning-bg: #fff7ed;
+  --warning-border: #fed7aa;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #071316;
+    --surface: #0e1e21;
+    --surface-2: #132a2e;
+    --foreground: #e6f1f0;
+    --muted: #8aa4a7;
+    --border: #1d353a;
+    --brand: #2dd4bf;
+    --brand-strong: #5eead4;
+    --brand-contrast: #04211f;
+    --accent: #0d2a28;
+    --accent-border: #1c5049;
+    --warning: #fbbf24;
+    --warning-bg: #2a1e08;
+    --warning-border: #4d3a12;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-contrast: var(--brand-contrast);
+  --color-accent: var(--accent);
+  --color-accent-border: var(--accent-border);
+  --color-warning: var(--warning);
+  --color-warning-bg: var(--warning-bg);
+  --color-warning-border: var(--warning-border);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
