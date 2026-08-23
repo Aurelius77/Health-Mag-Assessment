@@ -1,6 +1,5 @@
 // Pure data-cleaning functions for the messy source CSVs.
 // Kept side-effect free (no I/O) so the logic is easy to reason about and test.
-// scripts/seed.ts wires these to the CSV files and Supabase.
 
 /** Lowercase, strip accents/punctuation, hyphenate — for stable URL slugs. */
 export function slugify(input: string): string {
@@ -25,11 +24,7 @@ const ENTITIES: Record<string, string> = {
 };
 
 /**
- * Turn a text field that may contain HTML tags and entities into clean plain
- * text. The source has things like "<p>…</p>", "<strong>Typhoid</strong>" and
- * "Clean cooking &amp; smoke". Content here is short guidance, so we store it
- * as plain text (no rich formatting, no XSS surface). A future rich-text need
- * would swap this for an allow-list sanitizer.
+ * This used to clean text fields up from html tags and entities
  */
 export function cleanText(raw: string | undefined | null): string {
   if (!raw) return "";
